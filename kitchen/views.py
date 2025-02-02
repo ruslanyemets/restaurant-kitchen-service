@@ -29,15 +29,18 @@ class DishTypeListView(generic.ListView):
     queryset = DishType.objects.all()
     context_object_name = "dish_type_list"
     template_name = "kitchen/dish_type_list.html"
+    paginate_by = 5
 
 
 class DishListView(generic.ListView):
     model = Dish
     queryset = Dish.objects.select_related("dish_type").order_by("id")
     template_name = "kitchen/dish_list.html"
+    paginate_by = 5
 
 
 class CookListView(generic.ListView):
     model = Cook
     queryset = Cook.objects.all()
     template_name = "kitchen/cook_list.html"
+    paginate_by = 5
