@@ -14,7 +14,7 @@ class DishType(models.Model):
 
 
 class Cook(AbstractUser):
-    years_of_experience = models.IntegerField()
+    years_of_experience = models.IntegerField(null=True, blank=True)
 
     class Meta:
         verbose_name = "cook"
@@ -34,6 +34,9 @@ class Dish(models.Model):
         related_name="dishes"
     )
     cooks = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="dishes")
+
+    class Meta:
+        verbose_name_plural = "dishes"
 
     def __str__(self):
         return self.name
