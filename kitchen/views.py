@@ -1,9 +1,12 @@
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.views import generic
 
 from kitchen.models import Cook, Dish, DishType
 
 
+@login_required
 def index(request):
     """View function for the home page of the site."""
 
@@ -24,7 +27,7 @@ def index(request):
     return render(request, "kitchen/index.html", context=context)
 
 
-class DishTypeListView(generic.ListView):
+class DishTypeListView(LoginRequiredMixin, generic.ListView):
     model = DishType
     queryset = DishType.objects.all()
     context_object_name = "dish_type_list"
@@ -32,26 +35,26 @@ class DishTypeListView(generic.ListView):
     paginate_by = 5
 
 
-class DishListView(generic.ListView):
+class DishListView(LoginRequiredMixin, generic.ListView):
     model = Dish
     queryset = Dish.objects.select_related("dish_type").order_by("id")
     template_name = "kitchen/dish_list.html"
     paginate_by = 5
 
 
-class DishDetailView(generic.DetailView):
+class DishDetailView(LoginRequiredMixin, generic.DetailView):
     model = Dish
     template_name = "kitchen/dish_detail.html"
 
 
-class CookListView(generic.ListView):
+class CookListView(LoginRequiredMixin, generic.ListView):
     model = Cook
     queryset = Cook.objects.all()
     template_name = "kitchen/cook_list.html"
     paginate_by = 5
 
 
-class CookDetailView(generic.DetailView):
+class CookDetailView(LoginRequiredMixin, generic.DetailView):
     model = Cook
     queryset = Cook.objects.all().prefetch_related("dishes__dish_type")
     template_name = "kitchen/cook_detail.html"
