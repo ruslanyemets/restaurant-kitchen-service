@@ -39,8 +39,19 @@ class DishListView(generic.ListView):
     paginate_by = 5
 
 
+class DishDetailView(generic.DetailView):
+    model = Dish
+    template_name = "kitchen/dish_detail.html"
+
+
 class CookListView(generic.ListView):
     model = Cook
     queryset = Cook.objects.all()
     template_name = "kitchen/cook_list.html"
     paginate_by = 5
+
+
+class CookDetailView(generic.DetailView):
+    model = Cook
+    queryset = Cook.objects.all().prefetch_related("dishes__dish_type")
+    template_name = "kitchen/cook_detail.html"
