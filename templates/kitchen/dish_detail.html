@@ -11,7 +11,18 @@
     </a>
   </h1>
   <p>Dish type: {{ dish.dish_type }}</p>
-  <h1>
+  <p>Description: {{ dish.description }}</p>
+  <p>Price: {{ dish.price }}</p>
+  <h3>
+    Ingredients
+  </h3>
+  <hr>
+  <ul>
+    {% for ingredient in dish.ingredients.all %}
+      <li>{{ ingredient.name }}</li>
+    {% endfor %}
+  </ul>
+  <h3>
     Cooks
     {% if dish in user.dishes.all %}
       <a href="{% url 'kitchen:toggle-dish-assign' pk=dish.id %}" class="btn btn-danger link-to-page">
@@ -22,7 +33,7 @@
         Assign me as cook for this dish
       </a>
     {% endif %}
-  </h1>
+  </h3>
   <hr>
   <ul>
     {% for cook in dish.cooks.all %}
