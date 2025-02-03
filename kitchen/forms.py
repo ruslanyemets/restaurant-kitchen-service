@@ -44,3 +44,36 @@ def validate_years_of_experience(years_of_experience):
         raise ValidationError("Years of experience should be between 0 and 50")
 
     return years_of_experience
+
+
+class DishSearchForm(forms.Form):
+    name = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={"Placeholder": "Search by name"}
+        )
+    )
+
+
+class DishTypeSearchForm(forms.Form):
+    name = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={"Placeholder": "Search by name"}
+        )
+    )
+
+
+class CookSearchForm(forms.Form):
+    username = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={"Placeholder": "Search by username"}
+        )
+    )
