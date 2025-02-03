@@ -174,6 +174,34 @@ class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy("kitchen:cook-list")
 
 
+class IngredientListView(LoginRequiredMixin, generic.ListView):
+    model = Ingredient
+    queryset = Ingredient.objects.all()
+    context_object_name = "ingredient_list"
+    template_name = "kitchen/ingredient_list.html"
+    paginate_by = 5
+
+
+class IngredientCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Ingredient
+    fields = "__all__"
+    template_name = "kitchen/ingredient_form.html"
+    success_url = reverse_lazy("kitchen:ingredient-list")
+
+
+class IngredientUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Ingredient
+    fields = "__all__"
+    template_name = "kitchen/ingredient_form.html"
+    success_url = reverse_lazy("kitchen:ingredient-list")
+
+
+class IngredientDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Ingredient
+    template_name = "kitchen/ingredient_confirm_delete.html"
+    success_url = reverse_lazy("kitchen:ingredient-list")
+
+
 @login_required
 def toggle_assign_to_dish(request, pk):
     cook = Cook.objects.get(id=request.user.id)

@@ -17,6 +17,10 @@ from kitchen.views import (
     CookYearsOfExperienceUpdateView,
     CookDeleteView,
     toggle_assign_to_dish,
+    IngredientListView,
+    IngredientCreateView,
+    IngredientUpdateView,
+    IngredientDeleteView,
 )
 
 urlpatterns = [
@@ -60,6 +64,26 @@ urlpatterns = [
         name="cook-update"
     ),
     path("cooks/<int:pk>/delete/", CookDeleteView.as_view(), name="cook-delete"),
+    path(
+        "ingredients/",
+        IngredientListView.as_view(),
+        name="ingredient-list"
+        ),
+    path(
+        "ingredients/create/",
+        IngredientCreateView.as_view(),
+        name="ingredient-create"
+    ),
+    path(
+        "ingredients/<int:pk>/update/",
+        IngredientUpdateView.as_view(),
+        name="ingredient-update"
+    ),
+    path(
+        "ingredients/<int:pk>/delete/",
+        IngredientDeleteView.as_view(),
+        name="ingredient-delete"
+    ),
 ]
 
 app_name = "kitchen"
