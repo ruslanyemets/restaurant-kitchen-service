@@ -10,6 +10,12 @@
   </h1>
   <br>
 
+  <form action="" method="get" class="form-inline">
+    {{ search_form|crispy }}
+    <input type="submit" value="Search" class="btn btn-secondary">
+  </form>
+  <br>
+
   {% if ingredient_list %}
     <table class="table">
       <tr>

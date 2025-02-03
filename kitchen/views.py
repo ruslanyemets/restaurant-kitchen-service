@@ -12,6 +12,7 @@ from kitchen.forms import (
     DishTypeSearchForm,
     DishSearchForm,
     CookSearchForm,
+    IngredientSearchForm,
 )
 from kitchen.models import Cook, Dish, DishType, Ingredient
 
@@ -180,6 +181,20 @@ class IngredientListView(LoginRequiredMixin, generic.ListView):
     context_object_name = "ingredient_list"
     template_name = "kitchen/ingredient_list.html"
     paginate_by = 5
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(IngredientListView, self).get_context_data(**kwargs)
+        name = self.request.GET.get("name", "")
+        context["search_form"] = IngredientSearchForm(
+            initial={"name": name}
+        )
+        return context
+
+    def get_queryset(self):
+        name = self.request.GET.get("name")
+        if name:
+            return self.queryset.filter(name__icontains=name)
+        return self.queryset
 
 
 class IngredientCreateView(LoginRequiredMixin, generic.CreateView):

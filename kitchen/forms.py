@@ -81,3 +81,14 @@ class CookSearchForm(forms.Form):
             attrs={"Placeholder": "Search by username"}
         )
     )
+
+
+class IngredientSearchForm(forms.Form):
+    name = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={"Placeholder": "Search by name"}
+        )
+    )
