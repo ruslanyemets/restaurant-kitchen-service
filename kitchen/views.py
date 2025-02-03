@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
@@ -124,3 +125,15 @@ class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Cook
     template_name = "kitchen/cook_confirm_delete.html"
     success_url = reverse_lazy("kitchen:cook-list")
+
+
+@login_required
+def toggle_assign_to_dish(request, pk):
+    cook = Cook.objects.get(id=request.user.id)
+    if (
+        Dish.objects.get(id=pk) in cook.dishes.all()
+    ):
+        cook.dishes.remove(pk)
+    else:
+        cook.dishes.add(pk)
+    return HttpResponseRedirect(reverse_lazy("kitchen:dish-detail", args=[pk]))
