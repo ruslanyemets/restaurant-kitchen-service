@@ -125,7 +125,7 @@ class DishDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class CookListView(LoginRequiredMixin, generic.ListView):
     model = Cook
-    queryset = Cook.objects.all()
+    queryset = Cook.objects.all().order_by("username")
     template_name = "kitchen/cook_list.html"
     paginate_by = 5
 
