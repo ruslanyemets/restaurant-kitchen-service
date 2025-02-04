@@ -9,13 +9,23 @@ from kitchen.models import Cook, Dish, DishType, Ingredient
 
 class DishViewsTest(TestCase):
     def setUp(self):
-        self.user = get_user_model().objects.create_user(username="test_user", password="password_123_PASSWORD")
+        self.user = get_user_model().objects.create_user(
+            username="test_user", password="password_123_PASSWORD"
+        )
         self.client = Client()
-        self.client.login(username="test_user", password="password_123_PASSWORD")
+        self.client.login(
+            username="test_user",
+            password="password_123_PASSWORD"
+        )
 
         self.dish_type = DishType.objects.create(name="Main Dish")
 
-        self.cook = Cook.objects.create(username="cook1", password="password", first_name="John", last_name="Doe")
+        self.cook = Cook.objects.create(
+            username="cook1",
+            password="password",
+            first_name="John",
+            last_name="Doe"
+        )
 
         self.ingredient = Ingredient.objects.create(name="Tomato")
 
@@ -23,14 +33,23 @@ class DishViewsTest(TestCase):
             name="Test Dish",
             description="Test Description",
             price=10.99,
-            dish_type=self.dish_type
+            dish_type=self.dish_type,
         )
 
         self.dish_list_url = reverse("kitchen:dish-list")
-        self.dish_detail_url = reverse("kitchen:dish-detail", args=[self.dish.pk])
+        self.dish_detail_url = reverse(
+            "kitchen:dish-detail",
+            args=[self.dish.pk]
+        )
         self.dish_create_url = reverse("kitchen:dish-create")
-        self.dish_update_url = reverse("kitchen:dish-update", args=[self.dish.pk])
-        self.dish_delete_url = reverse("kitchen:dish-delete", args=[self.dish.pk])
+        self.dish_update_url = reverse(
+            "kitchen:dish-update",
+            args=[self.dish.pk]
+        )
+        self.dish_delete_url = reverse(
+            "kitchen:dish-delete",
+            args=[self.dish.pk]
+        )
 
     def test_dish_list_view(self):
         """
@@ -50,7 +69,7 @@ class DishViewsTest(TestCase):
             name="Another Dish",
             description="Description",
             price=15.99,
-            dish_type=self.dish_type
+            dish_type=self.dish_type,
         )
 
         response = self.client.get(self.dish_list_url + "?name=Test")
@@ -70,7 +89,7 @@ class DishViewsTest(TestCase):
 
     def test_dish_create_view(self):
         """
-        Test that DishDetailView displays dish details correctly
+        Test that DishCreateView creates dish correctly
         """
         data = {
             "name": "New Dish",
@@ -96,7 +115,7 @@ class DishViewsTest(TestCase):
 
     def test_dish_update_view(self):
         """
-        Test that DishUpdateView updtes dish correctly
+        Test that DishUpdateView updates dish correctly
         """
         updated_data = {
             "name": "Updated Dish",

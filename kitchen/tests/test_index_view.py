@@ -39,7 +39,10 @@ class IndexViewTest(TestCase):
         """
         Test that access to home page is open if user logged in
         """
-        self.client.login(username="test_user", password="password_123_PASSWORD")
+        self.client.login(
+            username="test_user",
+            password="password_123_PASSWORD"
+        )
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "kitchen/index.html")
@@ -49,7 +52,10 @@ class IndexViewTest(TestCase):
         Test that context data are correct:
         check the number of cooks, dishes, types of dishes, ingredients
         """
-        self.client.login(username="test_user", password="password_123_PASSWORD")
+        self.client.login(
+            username="test_user",
+            password="password_123_PASSWORD"
+        )
         response = self.client.get(self.url)
 
         self.assertEqual(response.context["num_cooks"], 2)
@@ -61,7 +67,10 @@ class IndexViewTest(TestCase):
         """
         Test that visit counter is working correctly
         """
-        self.client.login(username="test_user", password="password_123_PASSWORD")
+        self.client.login(
+            username="test_user",
+            password="password_123_PASSWORD"
+        )
 
         response = self.client.get(self.url)
         self.assertEqual(response.context["num_visits"], 1)

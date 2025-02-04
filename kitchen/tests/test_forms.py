@@ -65,7 +65,10 @@ class CookYearsOfExperienceUpdateFormTest(TestCase):
         """
         Test that CookYearsOfExperienceUpdateForm is valid
         """
-        form = CookYearsOfExperienceUpdateForm(data=self.valid_data, instance=self.cook)
+        form = CookYearsOfExperienceUpdateForm(
+            data=self.valid_data,
+            instance=self.cook
+        )
         self.assertTrue(form.is_valid())
 
         form.save()
