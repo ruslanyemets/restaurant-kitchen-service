@@ -25,25 +25,17 @@ from kitchen.views import (
 
 urlpatterns = [
     path("", index, name="index"),
-    path(
-            "dish-types/",
-            DishTypeListView.as_view(),
-            name="dish-type-list"
-        ),
-    path(
-        "dish-types/create/",
-        DishTypeCreateView.as_view(),
-        name="dish-type-create"
-    ),
+    path("dish-types/", DishTypeListView.as_view(), name="dish-type-list"),
+    path("dish-types/create/", DishTypeCreateView.as_view(), name="dish-type-create"),
     path(
         "dish-types/<int:pk>/update/",
         DishTypeUpdateView.as_view(),
-        name="dish-type-update"
+        name="dish-type-update",
     ),
     path(
         "dish-types/<int:pk>/delete/",
         DishTypeDeleteView.as_view(),
-        name="dish-type-delete"
+        name="dish-type-delete",
     ),
     path("dishes/", DishListView.as_view(), name="dish-list"),
     path("dishes/<int:pk>/", DishDetailView.as_view(), name="dish-detail"),
@@ -61,28 +53,22 @@ urlpatterns = [
     path(
         "cooks/<int:pk>/update/",
         CookYearsOfExperienceUpdateView.as_view(),
-        name="cook-update"
+        name="cook-update",
     ),
     path("cooks/<int:pk>/delete/", CookDeleteView.as_view(), name="cook-delete"),
+    path("ingredients/", IngredientListView.as_view(), name="ingredient-list"),
     path(
-        "ingredients/",
-        IngredientListView.as_view(),
-        name="ingredient-list"
-        ),
-    path(
-        "ingredients/create/",
-        IngredientCreateView.as_view(),
-        name="ingredient-create"
+        "ingredients/create/", IngredientCreateView.as_view(), name="ingredient-create"
     ),
     path(
         "ingredients/<int:pk>/update/",
         IngredientUpdateView.as_view(),
-        name="ingredient-update"
+        name="ingredient-update",
     ),
     path(
         "ingredients/<int:pk>/delete/",
         IngredientDeleteView.as_view(),
-        name="ingredient-delete"
+        name="ingredient-delete",
     ),
 ]
 

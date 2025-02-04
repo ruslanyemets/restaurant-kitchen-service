@@ -50,9 +50,7 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(DishTypeListView, self).get_context_data(**kwargs)
         name = self.request.GET.get("name", "")
-        context["search_form"] = DishTypeSearchForm(
-            initial={"name": name}
-        )
+        context["search_form"] = DishTypeSearchForm(initial={"name": name})
         return context
 
     def get_queryset(self):
@@ -92,9 +90,7 @@ class DishListView(LoginRequiredMixin, generic.ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(DishListView, self).get_context_data(**kwargs)
         name = self.request.GET.get("name", "")
-        context["search_form"] = DishSearchForm(
-            initial={"name": name}
-        )
+        context["search_form"] = DishSearchForm(initial={"name": name})
         return context
 
     def get_queryset(self):
@@ -136,9 +132,7 @@ class CookListView(LoginRequiredMixin, generic.ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(CookListView, self).get_context_data(**kwargs)
         username = self.request.GET.get("username", "")
-        context["search_form"] = CookSearchForm(
-            initial={"username": username}
-        )
+        context["search_form"] = CookSearchForm(initial={"username": username})
         return context
 
     def get_queryset(self):
@@ -160,10 +154,7 @@ class CookCreateView(LoginRequiredMixin, generic.CreateView):
     success_url = reverse_lazy("kitchen:cook-list")
 
 
-class CookYearsOfExperienceUpdateView(
-    LoginRequiredMixin,
-    generic.UpdateView
-):
+class CookYearsOfExperienceUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Cook
     form_class = CookYearsOfExperienceUpdateForm
     success_url = reverse_lazy("kitchen:cook-list")
@@ -185,9 +176,7 @@ class IngredientListView(LoginRequiredMixin, generic.ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(IngredientListView, self).get_context_data(**kwargs)
         name = self.request.GET.get("name", "")
-        context["search_form"] = IngredientSearchForm(
-            initial={"name": name}
-        )
+        context["search_form"] = IngredientSearchForm(initial={"name": name})
         return context
 
     def get_queryset(self):
@@ -220,9 +209,7 @@ class IngredientDeleteView(LoginRequiredMixin, generic.DeleteView):
 @login_required
 def toggle_assign_to_dish(request, pk):
     cook = Cook.objects.get(id=request.user.id)
-    if (
-        Dish.objects.get(id=pk) in cook.dishes.all()
-    ):
+    if Dish.objects.get(id=pk) in cook.dishes.all():
         cook.dishes.remove(pk)
     else:
         cook.dishes.add(pk)

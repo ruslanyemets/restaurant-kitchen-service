@@ -27,7 +27,7 @@ class CookCreationForm(UserCreationForm):
         fields = UserCreationForm.Meta.fields + (
             "first_name",
             "last_name",
-            "years_of_experience"
+            "years_of_experience",
         )
 
     def clean_years_of_experience(self):
@@ -55,9 +55,7 @@ class DishSearchForm(forms.Form):
         max_length=255,
         required=False,
         label="",
-        widget=forms.TextInput(
-            attrs={"Placeholder": "Search by name"}
-        )
+        widget=forms.TextInput(attrs={"Placeholder": "Search by name"}),
     )
 
 
@@ -66,9 +64,7 @@ class DishTypeSearchForm(forms.Form):
         max_length=255,
         required=False,
         label="",
-        widget=forms.TextInput(
-            attrs={"Placeholder": "Search by name"}
-        )
+        widget=forms.TextInput(attrs={"Placeholder": "Search by name"}),
     )
 
 
@@ -77,9 +73,7 @@ class CookSearchForm(forms.Form):
         max_length=255,
         required=False,
         label="",
-        widget=forms.TextInput(
-            attrs={"Placeholder": "Search by username"}
-        )
+        widget=forms.TextInput(attrs={"Placeholder": "Search by username"}),
     )
 
 
@@ -88,7 +82,5 @@ class IngredientSearchForm(forms.Form):
         max_length=255,
         required=False,
         label="",
-        widget=forms.TextInput(
-            attrs={"Placeholder": "Search by name"}
-        )
+        widget=forms.TextInput(attrs={"Placeholder": "Search by name"}),
     )
