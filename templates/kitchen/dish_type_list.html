@@ -14,7 +14,7 @@
     {{ search_form|crispy }}
     <input type="submit" value="Search" class="btn btn-secondary">
   </form>
-  <br>
+  <hr>
 
   {% if dish_type_list %}
     <table class="table">
@@ -34,12 +34,12 @@
               {{ dish_type.name }}
           </td>
           <td>
-            <a href="{% url 'kitchen:dish-type-update' pk=dish_type.id %}">
+            <a href="{% url 'kitchen:dish-type-update' pk=dish_type.id %}" class="text-success">
               Update
             </a>
           </td>
           <td>
-            <a style="color: red"
+            <a class="text-danger"
               href="{% url 'kitchen:dish-type-delete' pk=dish_type.id %}">
               Delete
             </a>

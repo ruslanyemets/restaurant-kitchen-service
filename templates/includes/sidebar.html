@@ -8,7 +8,7 @@
       </form>
     </li>
   {% else %}
-    <li class="list-group-item"><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
+    <li class="list-group-item"><a href="{% url 'login' %}">Login</a></li>
   {% endif %}
   <br>
 
@@ -16,5 +16,5 @@
   <li class="list-group-item"><a href="{% url 'kitchen:cook-list' %}">All cooks</a></li>
   <li class="list-group-item"><a href="{% url 'kitchen:dish-list' %}">All dishes</a></li>
   <li class="list-group-item"><a href="{% url 'kitchen:dish-type-list' %}">All dish types</a></li>
-  <li class="list-group-item"><a href="{% url 'kitchen:ingredient-list' %}">All ingredients</a></li>
+  <li class="list-group-item"><a href="{% url 'kitchen:ingredient-list' %}">All dish types</a></li>
 </ul>

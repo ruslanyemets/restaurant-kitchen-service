@@ -17,15 +17,24 @@
 
   <div class="ml-3">
     <h4>Dishes</h4>
-
-    {% for dish in cook.dishes.all %}
-        <hr>
-        <p><strong>Name:</strong> {{ dish.name }}</p>
-        <p><strong>Dish type:</strong> {{ dish.dish_type.name }}</p>
-        <p class="text-muted"><strong>Id:</strong> {{ dish.id }}</p>
-
-    {% empty %}
-      <p>No dishes!</p>
-    {% endfor %}
+    <hr>
+    <table class="table">
+      <tr>
+        <th>Dish name</th>
+        <th>Dish type</th>
+      </tr>
+      {% for dish in cook.dishes.all %}
+        <tr>
+          <td>
+            <a href="{% url "kitchen:dish-detail" pk=dish.id %}">
+              {{ dish.name }}
+            </a>
+          </td>
+          <td>
+            {{ dish.dish_type.name }}
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
   </div>
 {% endblock %}

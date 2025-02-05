@@ -14,17 +14,37 @@
     <input type="submit" value="Search" class="btn btn-secondary">
   </form>
   <hr>
+
   {% if dish_list %}
-    <ul>
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Dish Type</th>
+      </tr>
+
       {% for dish in dish_list %}
-        <li>
-          <a href="{% url "kitchen:dish-detail" pk=dish.id %}">{{ dish.id }}</a>
-          {{ dish.name }} ({{ dish.dish_type }})
-        </li>
+        <tr>
+          <td>
+              {{ dish.id }}
+          </td>
+          <td>
+            <a href="{% url "kitchen:dish-detail" pk=dish.id %}">
+              {{ dish.name }}
+            </a>
+          </td>
+          <td>
+            {{ dish.price }}
+          </td>
+          <td>
+            {{ dish.dish_type }}
+          </td>
+        </tr>
       {% endfor %}
-    </ul>
+    </table>
   {% else %}
-    <p>There are no dishes in the service</p>
+      <p>There are no dishes in the service</p>
   {% endif %}
 
 {% endblock %}

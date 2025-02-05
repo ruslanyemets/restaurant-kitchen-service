@@ -37,7 +37,7 @@
   <hr>
   <ul>
     {% for cook in dish.cooks.all %}
-      <li>{{ cook.username }} ({{ cook.first_name }} {{ cook.last_name }})</li>
+      <li><a href="{{ cook.get_absolute_url }}">{{ cook.username }} ({{ cook.first_name }} {{ cook.last_name }})</a></li>
     {% endfor %}
   </ul>
 {% endblock %}
