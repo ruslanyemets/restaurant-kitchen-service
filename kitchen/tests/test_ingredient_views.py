@@ -61,7 +61,9 @@ class IngredientViewsTest(TestCase):
 
         self.assertEqual(response.status_code, 302)
 
-        new_ingredient = Ingredient.objects.filter(name="New Ingredient").first()
+        new_ingredient = Ingredient.objects.filter(
+            name="New Ingredient"
+        ).first()
         self.assertIsNotNone(new_ingredient)
         self.assertEqual(new_ingredient.name, "New Ingredient")
 

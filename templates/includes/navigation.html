@@ -4,7 +4,7 @@
       <div class="col-12">
         <nav class="navbar navbar-expand-lg  blur border-radius-xl mt-4 top-0 z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
           <div class="container-fluid px-0">
-            <a class="navbar-brand font-weight-bolder ms-sm-3" href="/" rel="tooltip" title="Designed and Coded by Creative Mate" data-placement="bottom">
+            <a class="navbar-brand font-weight-bolder ms-sm-3" href="/" rel="tooltip" title="Home Page" data-placement="bottom">
               Home
             </a>
             <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,19 +25,19 @@
                 <li class="nav-item ms-lg-auto">
                   <a class="nav-link nav-link-icon me-2" href="{% url 'kitchen:cook-list' %}">
                     <i class="fa fa-download me-1"></i>
-                    <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="All dishes">All cooks</p>
+                    <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="All cooks">All cooks</p>
                   </a>
                 </li>
                 <li class="nav-item ms-lg-auto">
                   <a class="nav-link nav-link-icon me-2" href="{% url 'kitchen:ingredient-list' %}">
                     <i class="fa fa-download me-1"></i>
-                    <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="All dishes">All ingredients</p>
+                    <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="All ingredients">All ingredients</p>
                   </a>
                 </li>
                 <li class="nav-item ms-lg-auto">
                   <a class="nav-link nav-link-icon me-2" href="{% url 'kitchen:dish-type-list' %}">
                     <i class="fa fa-download me-1"></i>
-                    <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="All dishes">All dish types</p>
+                    <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="All dish types">All dish types</p>
                   </a>
                 </li>
                 {% if user.is_authenticated %}

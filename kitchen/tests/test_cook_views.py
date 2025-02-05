@@ -7,8 +7,7 @@ from kitchen.models import Cook
 class CookViewsTest(TestCase):
     def setUp(self):
         self.user = get_user_model().objects.create_user(
-            username="test_user",
-            password="password_123_PASSWORD"
+            username="test_user", password="password_123_PASSWORD"
         )
 
         self.cook_1 = Cook.objects.create(
@@ -21,7 +20,7 @@ class CookViewsTest(TestCase):
             username="cook2",
             first_name="Jane",
             last_name="Smith",
-            years_of_experience=3
+            years_of_experience=3,
         )
 
         self.list_url = reverse("kitchen:cook-list")
@@ -44,7 +43,10 @@ class CookViewsTest(TestCase):
             "years_of_experience": 4,
         }
 
-        self.client.login(username="test_user", password="password_123_PASSWORD")
+        self.client.login(
+            username="test_user",
+            password="password_123_PASSWORD"
+        )
 
     def test_cook_list_view(self):
         response = self.client.get(self.list_url)
@@ -53,7 +55,9 @@ class CookViewsTest(TestCase):
         self.assertEqual(len(response.context["cook_list"]), 3)
 
     def test_cook_detail_view(self):
-        response = self.client.get(reverse("kitchen:cook-detail", kwargs={"pk": self.cook_1.pk}))
+        response = self.client.get(
+            reverse("kitchen:cook-detail", kwargs={"pk": self.cook_1.pk})
+        )
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "kitchen/cook_detail.html")
         self.assertEqual(response.context["cook"], self.cook_1)

@@ -3,7 +3,7 @@
 
 {% block content %}
   <h1>{{ object|yesno:"Update,Create" }} ingredient</h1>
-  <form action="" method="post" novalidate>
+  <form action="" method="post" novalidate class="col-4">
     {% csrf_token %}
     {{ form|crispy }}
 
