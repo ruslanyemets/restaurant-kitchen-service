@@ -1,0 +1,642 @@
+[
+  {
+    "model": "kitchen.dishType",
+    "pk": 1,
+    "fields": {
+      "name": "Appetizers"
+    }
+  },
+  {
+    "model": "kitchen.dishType",
+    "pk": 2,
+    "fields": {
+      "name": "Main Course"
+    }
+  },
+  {
+    "model": "kitchen.dishType",
+    "pk": 3,
+    "fields": {
+      "name": "Desserts"
+    }
+  },
+  {
+    "model": "kitchen.dishType",
+    "pk": 4,
+    "fields": {
+      "name": "Salads"
+    }
+  },
+  {
+    "model": "kitchen.dishType",
+    "pk": 5,
+    "fields": {
+      "name": "Soups"
+    }
+  },
+  {
+    "model": "kitchen.dishType",
+    "pk": 6,
+    "fields": {
+      "name": "Beverages"
+    }
+  },
+  {
+    "model": "kitchen.dishType",
+    "pk": 7,
+    "fields": {
+      "name": "Grilled Dishes"
+    }
+  },
+  {
+    "model": "kitchen.dishType",
+    "pk": 8,
+    "fields": {
+      "name": "Vegetarian"
+    }
+  },
+  {
+    "model": "kitchen.dishType",
+    "pk": 9,
+    "fields": {
+      "name": "Pasta"
+    }
+  },
+  {
+    "model": "kitchen.dishType",
+    "pk": 10,
+    "fields": {
+      "name": "Pizza"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 1,
+    "fields": {
+      "name": "Lettuce"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 2,
+    "fields": {
+      "name": "Croutons"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 3,
+    "fields": {
+      "name": "Parmesan"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 4,
+    "fields": {
+      "name": "Tomato"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 5,
+    "fields": {
+      "name": "Mozzarella"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 6,
+    "fields": {
+      "name": "Basil"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 7,
+    "fields": {
+      "name": "Shrimp"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 8,
+    "fields": {
+      "name": "Lemongrass"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 9,
+    "fields": {
+      "name": "Lime Leaves"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 10,
+    "fields": {
+      "name": "Fettuccine"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 11,
+    "fields": {
+      "name": "Alfredo Sauce"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 12,
+    "fields": {
+      "name": "Salmon"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 13,
+    "fields": {
+      "name": "Soy Sauce"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 14,
+    "fields": {
+      "name": "Seasonal Vegetables"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 15,
+    "fields": {
+      "name": "Graham Cracker Crust"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 16,
+    "fields": {
+      "name": "Cheese"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 17,
+    "fields": {
+      "name": "Tomato Sauce"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 18,
+    "fields": {
+      "name": "Ricotta"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 19,
+    "fields": {
+      "name": "Beef"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 20,
+    "fields": {
+      "name": "Eggplant"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 21,
+    "fields": {
+      "name": "Balsamic"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 22,
+    "fields": {
+      "name": "Lemon"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 23,
+    "fields": {
+      "name": "Herbs"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 24,
+    "fields": {
+      "name": "Crust"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 25,
+    "fields": {
+      "name": "Spring Roll Wrappers"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 26,
+    "fields": {
+      "name": "Mustard"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 27,
+    "fields": {
+      "name": "Vegetables"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 28,
+    "fields": {
+      "name": "Chutney"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 29,
+    "fields": {
+      "name": "Nutmeg"
+    }
+  },
+  {
+    "model": "kitchen.ingredient",
+    "pk": 30,
+    "fields": {
+      "name": "Pumpkin"
+    }
+  },
+  {
+    "model": "kitchen.cook",
+    "pk": 1,
+    "fields": {
+      "username": "john_doe",
+      "first_name": "John",
+      "last_name": "Doe",
+      "years_of_experience": 10
+    }
+  },
+  {
+    "model": "kitchen.cook",
+    "pk": 2,
+    "fields": {
+      "username": "jane_smith",
+      "first_name": "Jane",
+      "last_name": "Smith",
+      "years_of_experience": 8
+    }
+  },
+  {
+    "model": "kitchen.cook",
+    "pk": 3,
+    "fields": {
+      "username": "alex_johnson",
+      "first_name": "Alex",
+      "last_name": "Johnson",
+      "years_of_experience": 5
+    }
+  },
+  {
+    "model": "kitchen.cook",
+    "pk": 4,
+    "fields": {
+      "username": "mary_white",
+      "first_name": "Mary",
+      "last_name": "White",
+      "years_of_experience": 7
+    }
+  },
+  {
+    "model": "kitchen.cook",
+    "pk": 5,
+    "fields": {
+      "username": "david_brown",
+      "first_name": "David",
+      "last_name": "Brown",
+      "years_of_experience": 12
+    }
+  },
+  {
+    "model": "kitchen.cook",
+    "pk": 6,
+    "fields": {
+      "username": "susan_green",
+      "first_name": "Susan",
+      "last_name": "Green",
+      "years_of_experience": 6
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 1,
+    "fields": {
+      "name": "Caesar Salad",
+      "description": "Classic Caesar salad with lettuce, croutons, and parmesan.",
+      "price": "12.99",
+      "dish_type": 4,
+      "cooks": [1, 2],
+      "ingredients": [1, 2, 3]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 2,
+    "fields": {
+      "name": "Margherita Pizza",
+      "description": "Traditional pizza with tomato, mozzarella, and basil.",
+      "price": "15.99",
+      "dish_type": 10,
+      "cooks": [3, 4],
+      "ingredients": [4, 5, 6]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 3,
+    "fields": {
+      "name": "Tom Yum Soup",
+      "description": "Spicy Thai soup with shrimp, lemongrass, and lime leaves.",
+      "price": "9.99",
+      "dish_type": 5,
+      "cooks": [1, 4],
+      "ingredients": [7, 8, 9]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 4,
+    "fields": {
+      "name": "Pasta Alfredo",
+      "description": "Creamy Alfredo sauce with fettuccine pasta.",
+      "price": "13.49",
+      "dish_type": 9,
+      "cooks": [2, 5],
+      "ingredients": [10, 11]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 5,
+    "fields": {
+      "name": "Grilled Salmon",
+      "description": "Perfectly grilled salmon with lemon and herbs.",
+      "price": "18.99",
+      "dish_type": 7,
+      "cooks": [6],
+      "ingredients": [12, 13]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 6,
+    "fields": {
+      "name": "Vegetable Stir Fry",
+      "description": "Stir fried seasonal vegetables with soy sauce.",
+      "price": "11.49",
+      "dish_type": 8,
+      "cooks": [3, 6],
+      "ingredients": [14, 13]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 7,
+    "fields": {
+      "name": "Cheesecake",
+      "description": "Delicious cheesecake with a buttery graham cracker crust.",
+      "price": "7.99",
+      "dish_type": 3,
+      "cooks": [2, 5],
+      "ingredients": [15, 16]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 8,
+    "fields": {
+      "name": "Beef Steak",
+      "description": "Grilled beef steak with your choice of sauce.",
+      "price": "22.99",
+      "dish_type": 7,
+      "cooks": [1, 6],
+      "ingredients": [19, 20, 21]
+    }
+  },
+    {
+    "model": "kitchen.dish",
+    "pk": 9,
+    "fields": {
+      "name": "Spaghetti Bolognese",
+      "description": "Classic Italian pasta with a rich meat sauce.",
+      "price": "14.99",
+      "dish_type": 9,
+      "cooks": [3, 5],
+      "ingredients": [10, 17, 19]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 10,
+    "fields": {
+      "name": "Spring Rolls",
+      "description": "Crispy spring rolls filled with vegetables and served with dipping sauce.",
+      "price": "6.99",
+      "dish_type": 4,
+      "cooks": [6],
+      "ingredients": [25, 7]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 11,
+    "fields": {
+      "name": "Pumpkin Soup",
+      "description": "Rich and creamy pumpkin soup with a hint of nutmeg.",
+      "price": "8.49",
+      "dish_type": 5,
+      "cooks": [1],
+      "ingredients": [30, 29]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 12,
+    "fields": {
+      "name": "Mushroom Risotto",
+      "description": "Creamy risotto with sautéed mushrooms and parmesan.",
+      "price": "12.99",
+      "dish_type": 9,
+      "cooks": [2, 4],
+      "ingredients": [16, 19]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 13,
+    "fields": {
+      "name": "Chicken Caesar Salad",
+      "description": "Grilled chicken on a bed of Caesar salad with croutons.",
+      "price": "13.99",
+      "dish_type": 4,
+      "cooks": [5],
+      "ingredients": [1, 2, 3, 19]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 14,
+    "fields": {
+      "name": "Fried Rice",
+      "description": "Classic stir-fried rice with vegetables and soy sauce.",
+      "price": "10.49",
+      "dish_type": 8,
+      "cooks": [4, 6],
+      "ingredients": [13, 27]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 15,
+    "fields": {
+      "name": "Vegetable Pizza",
+      "description": "Pizza with seasonal vegetables, mozzarella, and tomato sauce.",
+      "price": "13.49",
+      "dish_type": 10,
+      "cooks": [2, 3],
+      "ingredients": [4, 5, 20]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 16,
+    "fields": {
+      "name": "Chicken Curry",
+      "description": "Tender chicken in a rich curry sauce with a blend of spices.",
+      "price": "14.99",
+      "dish_type": 7,
+      "cooks": [1, 6],
+      "ingredients": [19, 23]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 17,
+    "fields": {
+      "name": "Eggplant Parmesan",
+      "description": "Baked eggplant with marinara sauce and melted mozzarella.",
+      "price": "12.99",
+      "dish_type": 8,
+      "cooks": [3, 5],
+      "ingredients": [20, 18]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 18,
+    "fields": {
+      "name": "Tiramisu",
+      "description": "Classic Italian dessert with layers of coffee-soaked cake and mascarpone.",
+      "price": "6.99",
+      "dish_type": 3,
+      "cooks": [4],
+      "ingredients": [16]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 19,
+    "fields": {
+      "name": "Chicken Wings",
+      "description": "Crispy chicken wings with your choice of dipping sauce.",
+      "price": "9.99",
+      "dish_type": 7,
+      "cooks": [2, 6],
+      "ingredients": [19, 23]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 20,
+    "fields": {
+      "name": "Falafel",
+      "description": "Crispy falafel balls served with hummus and pita bread.",
+      "price": "7.49",
+      "dish_type": 8,
+      "cooks": [1, 5],
+      "ingredients": [27, 25]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 21,
+    "fields": {
+      "name": "Grilled Vegetables",
+      "description": "Grilled seasonal vegetables with balsamic glaze.",
+      "price": "11.99",
+      "dish_type": 8,
+      "cooks": [6],
+      "ingredients": [14, 20, 21]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 22,
+    "fields": {
+      "name": "Beef Stir Fry",
+      "description": "Stir-fried beef with vegetables in a soy sauce glaze.",
+      "price": "16.99",
+      "dish_type": 7,
+      "cooks": [3],
+      "ingredients": [19, 23]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 23,
+    "fields": {
+      "name": "Lamb Chops",
+      "description": "Juicy lamb chops served with mint sauce and roasted potatoes.",
+      "price": "20.99",
+      "dish_type": 7,
+      "cooks": [2],
+      "ingredients": [19, 20]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 24,
+    "fields": {
+      "name": "Vegetable Soup",
+      "description": "Hearty vegetable soup with seasonal vegetables and herbs.",
+      "price": "8.99",
+      "dish_type": 5,
+      "cooks": [1, 4],
+      "ingredients": [14, 27]
+    }
+  },
+  {
+    "model": "kitchen.dish",
+    "pk": 25,
+    "fields": {
+      "name": "Chocolate Cake",
+      "description": "Rich and moist chocolate cake with a creamy frosting.",
+      "price": "5.99",
+      "dish_type": 3,
+      "cooks": [6],
+      "ingredients": [16]
+    }
+  }
+]
