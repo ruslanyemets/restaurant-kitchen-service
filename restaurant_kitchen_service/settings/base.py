@@ -1,18 +1,25 @@
 import os
-from dotenv import load_dotenv
+
+# from dotenv import load_dotenv
 
 from pathlib import Path
 
-load_dotenv()
+# load_dotenv()
 
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-SECRET_KEY = os.getenv("SECRET_KEY")
 
-DEBUG = True
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-ALLOWED_HOSTS = []
+
+# SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = os.environ.get(
+    "DJANGO_SECRET_KEY",
+    "django-insecure-b!p*i&9x)j9&6%d4l^kuy1zw+e)=tizyl#^_-kl*rd1fhavgal",
+)
+
 
 INTERNAL_IPS = [
     "127.0.0.1",
@@ -67,14 +74,6 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 WSGI_APPLICATION = "restaurant_kitchen_service.wsgi.application"
-
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
 
 
 AUTH_PASSWORD_VALIDATORS = [
