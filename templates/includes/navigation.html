@@ -1,0 +1,65 @@
+  <!-- Navbar -->
+  <div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+      <div class="col-12">
+        <nav class="navbar navbar-expand-lg  blur border-radius-xl mt-4 top-0 z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
+          <div class="container-fluid px-0">
+            <a class="navbar-brand font-weight-bolder ms-sm-3" href="/" rel="tooltip" title="Home Page" data-placement="bottom">
+              Home
+            </a>
+            <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon mt-2">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </span>
+            </button>
+            <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100" id="navigation">
+              <ul class="navbar-nav navbar-nav-hover ms-auto">
+                <li class="nav-item ms-lg-auto">
+                  <a class="nav-link nav-link-icon me-2" href="{% url 'kitchen:dish-list' %}">
+                    <i class="fa fa-download me-1"></i>
+                    <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="All dishes">All dishes</p>
+                  </a>
+                </li>
+                <li class="nav-item ms-lg-auto">
+                  <a class="nav-link nav-link-icon me-2" href="{% url 'kitchen:cook-list' %}">
+                    <i class="fa fa-download me-1"></i>
+                    <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="All cooks">All cooks</p>
+                  </a>
+                </li>
+                <li class="nav-item ms-lg-auto">
+                  <a class="nav-link nav-link-icon me-2" href="{% url 'kitchen:ingredient-list' %}">
+                    <i class="fa fa-download me-1"></i>
+                    <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="All ingredients">All ingredients</p>
+                  </a>
+                </li>
+                <li class="nav-item ms-lg-auto">
+                  <a class="nav-link nav-link-icon me-2" href="{% url 'kitchen:dish-type-list' %}">
+                    <i class="fa fa-download me-1"></i>
+                    <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="All dish types">All dish types</p>
+                  </a>
+                </li>
+                {% if user.is_authenticated %}
+                  <li class="nav-item my-auto ms-3 ms-lg-0">
+                    <a href="{{ user.get_absolute_url }}" class="btn btn-sm  bg-gradient-primary  mb-0 me-1 mt-2 mt-md-0">{{ user.get_username }}</a>
+                  </li>
+                  <li class="nav-item ms-lg-auto">
+                    <form  method="post" action="{% url 'logout' %}">
+                      {% csrf_token %}
+                      <div class="nav-link nav-link-icon me-2"><input type="submit" value="Logout" class="btn btn-link p-0 m-0"></div>
+                    </form>
+                  </li>          
+                {% else %}
+                  <li class="nav-item my-auto ms-3 ms-lg-0">
+                    <a href="{% url 'login' %}" class="btn btn-sm  bg-gradient-primary  mb-0 me-1 mt-2 mt-md-0">Login</a>
+                  </li>
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- End Navbar -->
+      </div>
+    </div>
+  </div>
