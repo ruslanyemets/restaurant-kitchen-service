@@ -6,7 +6,11 @@ Cooks can search, create, edit, and delete dishes, dish types and ingredients.
 
 ## Check it out!
 
-[Restaurant Kitchen Service project deployed to Render] ...
+[Restaurant Kitchen Service project deployed to Render] https://restaurant-kitchen-service-5dj6.onrender.com
+```
+login: admin
+password: 12345
+```
 
 
 ## Installing / Getting started
@@ -45,7 +49,13 @@ Open your browser and go to http://127.0.0.1:8000/ to see the app in action.
 ## Usage
 
 Once the server is running, you can access the application through your browser.
-Create superuser and use created username and password to log in.
+To log in use:
+```
+login: admin
+password: 12345
+```
+
+Or create superuser and use created username and password to log in.
 
 ```shell
 python manage.py createsuperuser
